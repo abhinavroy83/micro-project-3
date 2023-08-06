@@ -389,16 +389,17 @@ const calrow = calorie.map(
 );
 cal.innerHTML += calrow.join("");
 
+// list all the food items with calorie below 100
+
 function filterbycalorielessthan100(data) {
   return data.filter((item) => item.calorie < 100);
 }
-
 const lesscalorie = filterbycalorielessthan100(data);
 const calrow2 = lesscalorie.map(
   (item) => `<tr> <td> ${item.foodname}</td> <td>${item.calorie}</td></tr>`
 );
-const cal2 = document.querySelector("#callessthan");
-cal2.innerHTML += calrow.join("");
+const cal2 = document.querySelector("#callessthan100");
+cal2.innerHTML += calrow2.join("");
 
 function listFoodItemsByHighestProtein(data) {
   return data.slice().sort((a, b) => b.protiens - a.protiens);
